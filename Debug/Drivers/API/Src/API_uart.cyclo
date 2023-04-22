@@ -1,0 +1,5 @@
+API_uart.c:19:6:MX_USART3_UART_Init	2
+API_uart.c:48:6:uartSendString	2
+API_uart.c:55:6:uartSendStringSize	1
+API_uart.c:59:6:uartReceiveStringSize	1
+API_uart.c:63:1:__io_putchar	1
