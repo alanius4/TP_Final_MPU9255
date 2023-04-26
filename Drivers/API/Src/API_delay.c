@@ -1,9 +1,4 @@
-/*
- * API_delay.c
- *
- *  Created on: Mar 18, 2023
- *      Author: leonardo
- */
+
 #include "API_delay.h"
 #include "stm32f4xx_hal.h"  		/* Necesario para corregir un warning al usar HAL_GetTick*/
 

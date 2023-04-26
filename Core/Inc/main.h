@@ -22,6 +22,14 @@
 #ifndef __MAIN_H
 #define __MAIN_H
 
+#include "API_uart.h"
+#include "port-I2C.h"
+#include "Gpio.h"
+#include "API_debounce.h"
+#include "API_delay.h"
+#include <string.h>
+#include "stdio.h"
+
 #ifdef __cplusplus
 extern "C" {
 #endif

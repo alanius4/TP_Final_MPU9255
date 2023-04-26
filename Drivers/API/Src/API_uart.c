@@ -1,9 +1,3 @@
-/*
- * API_uart.c
- *
- *  Created on: Apr 1, 2023
- *      Author: leonardo
- */
 
 #include <stdio.h>
 #include "API_uart.h"
@@ -12,8 +6,6 @@
 //Se le coloca static para encapsulamiento
 static UART_HandleTypeDef huart3;
 
-//prototipo
-void MX_USART3_UART_Init(void);
 
 //implementacion
 void MX_USART3_UART_Init(void)
@@ -44,7 +36,6 @@ void MX_USART3_UART_Init(void)
 
 }
 
-//Recorre el array y envía el contenido uno a uno hasta encontrar una \0
 void uartSendString(uint8_t *pstring) {
 	do {
 		HAL_UART_Transmit(&huart3, pstring, 1, 0xFFFF);

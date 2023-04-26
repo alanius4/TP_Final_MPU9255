@@ -1,9 +1,3 @@
-/*
- * API_uart.h
- *
- *  Created on: Apr 1, 2023
- *
- */
 
 #ifndef API_INC_API_UART_H_
 #define API_INC_API_UART_H_
@@ -11,6 +5,9 @@
 #include "stdbool.h"
 #include "stdint.h"
 #include "stm32f4xx_hal.h"
+
+//prototipo
+void MX_USART3_UART_Init(void);
 
 
 /* User can use this section to tailor USARTx/UARTx instance used and associated

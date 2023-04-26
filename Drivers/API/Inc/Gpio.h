@@ -1,11 +1,8 @@
 
-#ifndef API_INC_PORT_I2C_H_
-#define API_INC_PORT_I2C_H_
-
-#endif /* API_INC_PORT_I2C_H_ */
+#ifndef API_INC_GPIO_H_
+#define API_INC_GPIO_H_
 
 
-/* Define to prevent recursive inclusion -------------------------------------*/
 
 #ifdef __cplusplus
 extern "C" {
@@ -18,16 +15,14 @@ extern "C" {
 
 /* USER CODE END Includes */
 
-
-
 /* USER CODE BEGIN Private defines */
-extern I2C_HandleTypeDef hi2c1;
+
 /* USER CODE END Private defines */
 
-void MX_I2C1_Init(void);
+void MX_GPIO_Init(void);
 
 /* USER CODE BEGIN Prototypes */
 
 /* USER CODE END Prototypes */
 
-
+#endif /* API_INC_GPIO_H_ */

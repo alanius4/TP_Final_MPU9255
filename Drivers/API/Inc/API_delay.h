@@ -1,9 +1,3 @@
-/*
- * API_delay.h
- *
- *  Created on: Mar 18, 2023
- *      Author: leonardo
- */
 
 #ifndef API_INC_API_DELAY_H_
 #define API_INC_API_DELAY_H_
