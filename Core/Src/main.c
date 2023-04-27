@@ -85,7 +85,6 @@ void SystemClock_Config(void);
 
 // El codigo debe devolver 0x68(104 en decimal)- Esto quiere decir q funciona correctamente. Luego borrar este paso.
 
-// Funciones Agregadas I2c.
 void MPU9255_Init(void)
 {
 	uint8_t check;
@@ -110,10 +109,6 @@ void MPU9255_Init(void)
 		Data = 0x00;
 		HAL_I2C_Mem_Write(&hi2c1, MPU9255_ADDR, ACCEL_CONFIG_REG, 1, &Data, 1, 1000);
 
-		// Configuracion del Gyroscopio GYRO_CONFIG Register
-		// XG_ST=0,YG_ST=0,ZG_ST=0, FS_SEL=0 -> � 250 �/s
-		Data = 0x00;
-		HAL_I2C_Mem_Write(&hi2c1, MPU9255_ADDR, GYRO_CONFIG_REG, 1, &Data, 1, 1000);
 	}
 }
 
@@ -182,40 +177,32 @@ int main(void)
 	///
 	while (1)
 	{
-		//inicia estado MEF QUIETO
-
 		MPU9255_Read_Accel();
-
-
-		HAL_Delay(1000);
-		uartSendString("MedicionAcelerometro");
+		uartSendString(" Medicion Accelerometro: ");
 
 		//leer variable X accelerometro
-		HAL_Delay(1000);
-		int var1 = Ax;
+		int varx = Ax;
 		char int_str1[20];
-		sprintf(int_str1, "%d", var1);
+		sprintf(int_str1, "%d", varx);
 		uartSendString(int_str1);
 
 		//leer variable Y accelerometro
-		HAL_Delay(1000);
-		int var2 = Ay;
+		int vary = Ay;
 		char int_str2[20];
-		sprintf(int_str2, "%d", var2);
+		sprintf(int_str2, "%d", vary);
 		uartSendString(int_str2);
 
 		//leer variable Z accelerometro
-		HAL_Delay(1000);
-		int var3 = Az;
+		int varz = Az;
 		char int_str3[20];
-		sprintf(int_str3, "%d", var3);
+		sprintf(int_str3, "%d", varz);
 		uartSendString(int_str3);
 
 		//checkeo de dato transmitido I2C
 		uint8_t check = 0;
 		HAL_I2C_Mem_Read(&hi2c1, MPU9255_ADDR, WHO_AM_I_REG, 1, &check, 1, 1000);
+		uartSendString(" prueba ");
 		uartSendString(check);
-		HAL_Delay(1000);
 
 		//actualiza el estado
 		debounceFSM_update(Ax,Ay,Az);
