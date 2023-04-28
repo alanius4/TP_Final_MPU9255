@@ -83,8 +83,6 @@ void SystemClock_Config(void);
 
 //-------------- CHEQUEO FUNCIONAL-------------------------------------------------------------
 
-// El codigo debe devolver 0x68(104 en decimal)- Esto quiere decir q funciona correctamente. Luego borrar este paso.
-
 void MPU9255_Init(void)
 {
 	uint8_t check;
